@@ -6,7 +6,7 @@
 {% endblock style %}
 
 {% block title %}
-<title>Login | Dashboard Sonofera</title>
+<title>Login | Dashboard</title>
 {% endblock title %}
 
 {% block content %}
@@ -22,22 +22,31 @@
                 <div class="modal-body">
                   <div class="h5 modal-title text-center">
                     <h4 class="mt-2">
-                      <img class="sonofera-logo" src="{% static 'logo/logo-sonofera.png' %}" alt="SonoferaFarm">
                       <div>
                       <span>Please sign in to your account below.</span>
                       </div>
                     </h4>
                   </div>
+
+                  
+                  {% if message %}
+                    <b>{{message}}</b>
+                  {% endif %}
+                    
                   <div class="form-row">
                     <div class="col-md-12">
                       <div class="position-relative form-group">
-                        <input name="{{form.username.name}}" id="exampleEmail" placeholder="Email here..." type="email"
-                          class="form-control">
+                        <input name="email" id="exampleEmail" placeholder="Email here..." type="email"
+                          class="form-control" value="
+                          {% if email %}
+                            {{email}}
+                          {% endif %}
+                            ">
                       </div>
                     </div>
                     <div class="col-md-12">
                       <div class="position-relative form-group">
-                        <input name="{{form.password.name}}" id="examplePassword" placeholder="Password here..."
+                        <input name="password" id="examplePassword" placeholder="Password here..."
                           type="password" class="form-control">
                       </div>
                     </div>
@@ -60,7 +69,7 @@
               </form>
             </div>
           </div>
-          <div class="text-center text-white opacity-8 mt-3">Copyright © SonoferaFarm. 2020</div>
+          <div class="text-center text-white opacity-8 mt-3">Copyright © khoirul. 2023</div>
         </div>
       </div>
     </div>
