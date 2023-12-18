@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     # django app
     'users',
+    'api',
 ]
 
 AUTH_USER_MODEL = "users.CustomUser"
