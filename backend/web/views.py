@@ -53,3 +53,20 @@ class UpdateCountry(LoginRequiredMixin, UpdateView):
     model = models.Country
     form_class = forms.CountryForm
     success_url = reverse_lazy('country_list')
+
+class ListCategory(ListView, LoginRequiredMixin):
+    template_name = 'dashboard/category/list.html'
+    model = models.Category
+    context_object_name = 'lists'
+
+class NewCategory(LoginRequiredMixin, CreateView):
+    template_name = 'dashboard/category/new.html'
+    model = models.Category
+    form_class = forms.CategoryForm
+    success_url = reverse_lazy('category_list')
+
+class UpdateCategory(LoginRequiredMixin, UpdateView):
+    template_name = 'dashboard/category/update.html'
+    model = models.Category
+    form_class = forms.CategoryForm
+    success_url = reverse_lazy('category_list')

@@ -6,14 +6,14 @@
 <!-- isi -->
 <div class="tabs-animation">
     <div class="card mb-3">
-        <a href="{% url 'country_new' %}" class="btn btn-primary">New</a>
+        <a href="{% url 'category_new' %}" class="btn btn-primary">New</a>
         <div class="card-body">
           <table style="width: 100%;" id="example" class="table table-hover table-striped table-bordered">
               <thead>
               <tr>
-                  <th>Name</th>
-                  <th>Url flag</th>
-                  <th>Currency</th>
+                  <th>Country</th>
+                  <th>Title</th>
+                  <th>Price Per Kilo</th>
                   <th>Action</th>
               </tr>
               </thead>
@@ -21,15 +21,11 @@
                 
                 {% for list in lists %}
                 <tr>
-                    <td>{{list.country_name}}</td>
-                    <td>
-                        <a href="{{list.country_flag}}">
-                            {{list.country_flag|truncatechars:50}}
-                        </a>
-                    </td>
-                    <td>{{list.country_currency}}</td>
+                    <td>{{list.country_id.country_name}}</td>
+                    <td>{{list.category_title}}</td>
+                    <td>{{list.country_id.country_currency}} {{list.price_per_kilo}}</td>
                     <th>
-                        <a href="{% url 'country_update' list.id %}">Update</a>
+                        <a href="{% url 'category_update' list.id %}">Update</a>
                     </th>
                 </tr>
                 {% endfor %}
@@ -37,10 +33,10 @@
               </tbody>
               <tfoot>
               <tr>
-                  <th>Name</th>
-                  <th>Url flag</th>
-                  <th>Currency</th>
-                  <th>Action</th>
+                <th>Country</th>
+                <th>Title</th>
+                <th>Price Per Kilo</th>
+                <th>Action</th>
               </tr>
               </tfoot>
           </table>

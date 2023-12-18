@@ -10,4 +10,8 @@ urlpatterns = [
     path('country/new/', views.NewCountry.as_view(), name='country_new'),
     path('country/update/<int:pk>/', views.UpdateCountry.as_view(), name='country_update'),
 
+    path('category/', views.ListCategory.as_view(), name='category_list'),
+    path('category/new/', views.NewCategory.as_view(), name='category_new'),
+    path('category/update/<int:pk>/', views.UpdateCategory.as_view(), name='category_update'),
+
 ]
