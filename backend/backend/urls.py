@@ -25,6 +25,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     path('', include('web.urls')),
+    path('api/', include('api.urls')),
+
+    path('auth/', include('djoser.urls')),
+    path('auth/', include('djoser.urls.authtoken')),
 
     path('logout/', views.LogoutView.as_view(next_page='/login'), name='logout_user'),
 ]
