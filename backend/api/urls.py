@@ -6,6 +6,7 @@ from rest_framework import permissions
 router = DefaultRouter()
 
 router.register('countries', views.CountryViewSet)
+router.register('categories', views.CategoryViewSet)
 
 urlpatterns = [
   path('', include(router.urls)),
