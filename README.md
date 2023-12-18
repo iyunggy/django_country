@@ -1,0 +1,1 @@
+1. membuat django project dengan nama folder backend
