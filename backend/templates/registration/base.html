@@ -1,0 +1,45 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- metatags -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Content-Language" content="en">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
+  <!-- Disable tap highlight on IE -->
+  <meta name="msapplication-tap-highlight" content="no">
+  <!-- custom metatag -->
+  {% block metatag %}
+    
+  {% endblock metatag %}
+
+  <!-- custom title -->
+  {% block title %}
+    
+  {% endblock title %}
+
+  <!-- custom style -->
+  {% block style %}
+    
+  {% endblock style %}
+  
+  {% include "snippets/style.html" %}
+  {% include "snippets/favicon.html" %}
+</head>
+
+<body>
+  {% block content %}
+    
+  {% endblock content %}
+
+  {% include "snippets/script.html" %}
+  <!-- custom scripts -->
+  {% block scripts %}
+    
+  {% endblock scripts %}
+</body>
+</html>

@@ -1,0 +1,69 @@
+{% extends "registration/base.html" %}
+{% load static %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'login/css/custom.css' %}">
+{% endblock style %}
+
+{% block title %}
+<title>Login | Dashboard Sonofera</title>
+{% endblock title %}
+
+{% block content %}
+<div class="app-container app-theme-white body-tabs-shadow">
+  <div class="app-container">
+    <div class="h-100 bg-plum-custom bg-animation"> <!-- bg-plus-custom = css custom -->
+      <div class="d-flex h-100 justify-content-center align-items-center">
+        <div class="mx-auto app-login-box col-md-8">
+          <div class="modal-dialog w-100 mx-auto">
+            <div class="modal-content">
+              <form class="" method="POST" action="{% url 'login_user' %}">
+              {% csrf_token %}
+                <div class="modal-body">
+                  <div class="h5 modal-title text-center">
+                    <h4 class="mt-2">
+                      <img class="sonofera-logo" src="{% static 'logo/logo-sonofera.png' %}" alt="SonoferaFarm">
+                      <div>
+                      <span>Please sign in to your account below.</span>
+                      </div>
+                    </h4>
+                  </div>
+                  <div class="form-row">
+                    <div class="col-md-12">
+                      <div class="position-relative form-group">
+                        <input name="{{form.username.name}}" id="exampleEmail" placeholder="Email here..." type="email"
+                          class="form-control">
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="position-relative form-group">
+                        <input name="{{form.password.name}}" id="examplePassword" placeholder="Password here..."
+                          type="password" class="form-control">
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- <div class="divider"></div>
+                  <h6 class="mb-0">No account? <a href="javascript:void(0);" class="text-primary">Sign up now</a></h6> -->
+                </div>
+                <div class="modal-footer clearfix">
+                  <!-- <div class="float-left"><a href="javascript:void(0);" class="btn-lg btn btn-link">Recover Password</a>
+                  </div> -->
+                  <div class="float-right">
+                    <!-- untuk redirect ke page beradarkan copy paste url -->
+										{% if request.GET.next %}
+                      <input type="hidden" name="next" id="" value="{{request.GET.next}}">
+                    {% endif %}
+                    <button class="btn btn-primary btn-lg">Login to Dashboard</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="text-center text-white opacity-8 mt-3">Copyright © SonoferaFarm. 2020</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}

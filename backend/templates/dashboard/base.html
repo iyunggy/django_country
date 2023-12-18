@@ -1,0 +1,44 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Language" content="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Analytics Dashboard - This is an example dashboard created using build-in elements and components.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no"
+    />
+    <meta name="description" content="This is an example dashboard created using build-in elements and components.">
+
+    <!-- Disable tap highlight on IE -->
+    <meta name="msapplication-tap-highlight" content="no">
+
+    {% include 'snippets/style.html' %}
+
+<body>
+<div class="app-container app-theme-white body-tabs-shadow fixed-header fixed-sidebar">
+    {% include 'snippets/navbar.html' %}
+    {% include 'snippets/layout_option.html' %}
+    <div class="app-main">
+        {% include 'snippets/sidebar.html' %}
+        <div class="app-main__outer">
+            <div class="app-main__inner">
+                
+                {% block content %}
+                    
+                {% endblock content %}
+                    
+                
+            </div>
+            
+            {% include 'snippets/footer.html' %}
+        </div>
+    </div>
+</div>
+{% include 'snippets/server_status.html' %}
+<div class="app-drawer-overlay d-none animated fadeIn"></div>
+{% include 'snippets/script.html' %}
+</body>
+</html>
