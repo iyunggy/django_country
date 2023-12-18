@@ -26,7 +26,7 @@ urlpatterns = [
 
     path('', include('web.urls')),
 
-    path('logout/', views.LogoutView.as_view(next_page='/'), name='logout_user'),
+    path('logout/', views.LogoutView.as_view(next_page='/login'), name='logout_user'),
 ]
 
 # if settings.DEBUG:
