@@ -6,4 +6,6 @@ urlpatterns = [
     
     path('', views.Dashboard.as_view(), name='dashboard'),
 
+    path('country/', views.ListCountry.as_view(), name='country_list')
+
 ]

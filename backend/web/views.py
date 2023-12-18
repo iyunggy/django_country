@@ -7,6 +7,7 @@ from django.contrib.auth import authenticate, login
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.http import HttpResponseRedirect
+from api import models
 
 class LoginView(TemplateView):
     def get(self, request, *args, **kwargs):
@@ -32,5 +33,10 @@ class LoginView(TemplateView):
                   'password': password,
                 })
 
-class Dashboard(TemplateView):
+class Dashboard(TemplateView, LoginRequiredMixin):
   template_name = 'dashboard/index.html'
+
+class ListCountry(ListView, LoginRequiredMixin):
+    template_name = 'dashboard/country/list.html'
+    model = models.Country
+    context_object_name = 'lists'
