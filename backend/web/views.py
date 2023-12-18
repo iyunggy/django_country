@@ -8,6 +8,7 @@ from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.http import HttpResponseRedirect
 from api import models
+from . import forms
 
 class LoginView(TemplateView):
     def get(self, request, *args, **kwargs):
@@ -40,3 +41,15 @@ class ListCountry(ListView, LoginRequiredMixin):
     template_name = 'dashboard/country/list.html'
     model = models.Country
     context_object_name = 'lists'
+
+class NewCountry(LoginRequiredMixin, CreateView):
+    template_name = 'dashboard/country/new.html'
+    model = models.Country
+    form_class = forms.CountryForm
+    success_url = reverse_lazy('country_list')
+
+class UpdateCountry(LoginRequiredMixin, UpdateView):
+    template_name = 'dashboard/country/update.html'
+    model = models.Country
+    form_class = forms.CountryForm
+    success_url = reverse_lazy('country_list')

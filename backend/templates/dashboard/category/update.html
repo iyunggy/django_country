@@ -1,0 +1,19 @@
+{% extends 'dashboard/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- isi -->
+<div class="tabs-animation">
+    <div class="card mb-3">
+        <div class="card-body">
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{form.as_p}}
+                <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> update</button>
+              </form>
+      </div>
+  </div>
+</div>
+{% endblock content %}
+  
